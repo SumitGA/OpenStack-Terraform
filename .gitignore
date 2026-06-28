@@ -1,0 +1,10 @@
+# Terraform state — contains sensitive data, never commit
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Credentials / variable files with secrets
+*.tfvars
+clouds.yaml
+admin-openrc.sh
