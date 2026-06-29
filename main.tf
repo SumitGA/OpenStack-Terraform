@@ -132,12 +132,18 @@ resource "openstack_compute_instance_v2" "vm" {
 ###############################################################################
 # 6. FLOATING IP — allocate from the external pool, associate to the VM.
 ###############################################################################
+
 resource "openstack_networking_floatingip_v2" "fip" {
   pool = data.openstack_networking_network_v2.external.name
 }
 
+data "openstack_networking_port_v2" "vm_port" {
+  device_id  = openstack_compute_instance_v2.vm.id
+  network_id = openstack_networking_network_v2.tenant_net.id
+}
+
 resource "openstack_networking_floatingip_associate_v2" "fip_assoc" {
   floating_ip = openstack_networking_floatingip_v2.fip.address
-  port_id     = openstack_compute_instance_v2.vm.network[0].port
+  port_id     = data.openstack_networking_port_v2.vm_port.id
 }
 
