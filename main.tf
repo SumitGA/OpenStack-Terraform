@@ -23,7 +23,7 @@ provider "openstack" {
     "identity" = "http://${var.vip_address}:5000/v3/"
     "network"  = "http://${var.vip_address}:9696/v2.0/"
     "compute"  = "http://${var.vip_address}:8774/v2.1/"
-    "image"    = "http://${var.vip_address}:9292/"
+    "image"    = "http://${var.vip_address}:9292/v2.0/"
   }
 }
 
