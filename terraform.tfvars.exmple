@@ -1,0 +1,12 @@
+# Copy to terraform.tfvars and edit to override any default.
+# terraform.tfvars is git-ignored (it may contain environment-specific values).
+#
+
+# cloud_name            = "kolla-admin"
+# vip_address           = "192.168.0.250"
+# external_network_name = "external-net"
+# tenant_cidr           = "10.10.0.0/24"
+# image_name            = "ubuntu-24.04"
+# flavor_name           = "m1.small"
+# public_key_path       = "~/.ssh/id_ed25519.pub"
+
